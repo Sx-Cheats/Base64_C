@@ -10,7 +10,6 @@ constexpr const char* b64_char = (char*)"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklm
 template<typename T>
 void for_each(string v, T callback)
 {
-
     for (string::iterator _v = v.begin(); _v != v.end(); ++_v)
     {
         callback(*_v);
