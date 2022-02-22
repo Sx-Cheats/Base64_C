@@ -1,5 +1,3 @@
-
-
 #include <iostream>
 #include <bitset>
 #include<cstring>
@@ -20,14 +18,14 @@ void for_each(string v, T callback)
 }
 string  text_to_bits(string text, string bits = "")
 {
-    for_each(text, [&bits](char b) {bits += bitset<8>(b).to_string();});
+    for_each(text, [&bits](char b) {bits += bitset<8>(b).to_string(); });
     return bits;
 }
 string base64encode(string text, string pack = "")
 {
     string b64;
     int r = 1;
-    for_each((*(new string(text_to_bits(text)))), [&](char c)
+    for_each(text_to_bits(text), [&](char c)
         {
             pack += c;
             if (!(r % 6))
@@ -46,12 +44,12 @@ int get_index(string c, char v)
     int i_same = 0;
     for_each(c, [&i_same, &v](char c)
         {
-           
+
             if (c == v)
                 v = 0;
-            if(v!=0)
+            if (v != 0)
                 i_same++;
-            
+
         });
     return i_same;
 }
