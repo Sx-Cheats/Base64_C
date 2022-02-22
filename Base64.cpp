@@ -43,12 +43,10 @@ int get_index(string c, char v)
     int i_same = 0;
     for_each(c, [&i_same, &v](char c)
         {
-
             if (c == v)
                 v = 0;
             if (v != 0)
                 i_same++;
-
         });
     return i_same;
 }
