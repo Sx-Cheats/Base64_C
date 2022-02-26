@@ -17,7 +17,7 @@ void for_each(string v, T callback)
 }
 string  text_to_bits(string text, string bits = "")
 {
-    for_each(text, [&bits](char b) {bits += bitset<8>(b).to_string(); });
+    for_each(text, [&bits](char b) {bits += bitset<8>(b).to_string();});
     return bits;
 }
 string base64encode(string text, string pack = "")
